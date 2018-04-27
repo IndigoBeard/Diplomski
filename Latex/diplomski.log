@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.24)  24 APR 2018 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.24)  27 APR 2018 10:35
 entering extended mode
 **./diplomski.tex
 (diplomski.tex
@@ -606,22 +606,41 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@thisruleclass=\count110
 \@lastruleclass=\count111
 \@thisrulewidth=\dimen144
+)
+("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen145
+\extrarowheight=\dimen146
+\NC@list=\toks25
+\extratabsurround=\skip49
+\backup@length=\skip50
+)
+("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.s
+ty"
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+\TX@col@width=\dimen147
+\TX@old@table=\dimen148
+\TX@old@col=\dimen149
+\TX@target=\dimen150
+\TX@delta=\dimen151
+\TX@cols=\count112
+\TX@ftn=\toks26
 ) (diplomski.aux)
 \openout1 = `diplomski.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 12.
 
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -664,17 +683,17 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen145
+\scratchcounter=\count113
+\scratchdimen=\dimen152
 \scratchbox=\box29
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen146
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks26
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen153
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
+\everyMPtoPDFconversion=\toks28
 )
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
 f-base.sty"
@@ -736,26 +755,26 @@ G,.JBIG2,.JB2,.eps]
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 16.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 23.
 
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 23.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 23.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 23.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 16.
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 23.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
 "
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
 "
@@ -763,7 +782,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/edompet/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 19.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
 
 ("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -782,34 +801,77 @@ Poglavlje 1.
 
 ]
 Poglavlje 2.
-(diplomski.bbl [2
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 56.
+("C:\Users\edompet\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd
+"
+File: omsptm.fd 
+)
+
+LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
+(Font)              using `OMS/ptm/m/n' instead
+(Font)              for symbol `textbullet' on input line 56.
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+[2
+
+]
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 80.
+ [3] [4] [5] [6] [7]
+Poglavlje 3.
+[8
+
+]
+Poglavlje 4.
+[9
+
+]
+Poglavlje 5.
+[10
+
+]
+Poglavlje 6.
+(diplomski.bbl [11
 
 ]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
-) [3
+) [12
 
-] [4] (diplomski.aux) ) 
+] [13] (diplomski.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5959 strings out of 493305
- 85617 string characters out of 3128932
- 155762 words of memory out of 3000000
- 9373 multiletter control sequences out of 15000+200000
- 42229 words of font info for 51 fonts, out of 3000000 for 9000
+ 6112 strings out of 493305
+ 87795 string characters out of 3128932
+ 164540 words of memory out of 3000000
+ 9504 multiletter control sequences out of 15000+200000
+ 63209 words of font info for 80 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,6n,40p,278b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/font
-s/enc/dvips/base/8r.enc}<C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/urw/courier/ucrro8a.pfb><C:/Users/edompet/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/edompet/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/edompet/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/edompet/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/edompe
-t/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on diplomski.pdf (8 pages, 64315 bytes).
+ 43i,9n,40p,809b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.e
+nc}<C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/urw/courier/ucrro8a.pfb><C:/Users/edompet/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/edompet/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/edompet/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/edompet/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/edompet/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/edompet
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on diplomski.pdf (17 pages, 113130 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

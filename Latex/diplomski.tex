@@ -1,17 +1,24 @@
 \documentclass[times, utf8, diplomski]{fer}
 \usepackage{booktabs}
 \usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[tableposition=top]{caption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[tableposition=top]{caption}
+\usepackage{booktabs}
+\renewcommand{\labelitemi}{\tiny\bfseries\textbullet}
 
 \begin{document}
 
 % TODO: Navedite broj rada.
-\thesisnumber{000}
+\thesisnumber{1759}
 
 % TODO: Navedite naslov rada.
-\title{Naslov}
+\title{Analiza protokola za upravljanje sigurnosnim certifikatima}
 
 % TODO: Navedite vaše ime i prezime.
-\author{Arthur Dent}
+\author{Dominik Petrović}
 
 \maketitle
 
@@ -19,12 +26,142 @@
 \izvornik
 
 % Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
-\zahvala{}
+\zahvala{hvala?}
 
 \tableofcontents
 
 \chapter{Uvod}
 Uvod rada. Nakon uvoda dolaze poglavlja u kojima se obrađuje tema.
+
+\chapter{Teorijska pozadina}
+U prvom poglavlju ovog rada opisuju se SSL (eng. \textit{Secure Sockets Layer}) i TSL (eng. \textit{Transport Layer Security}) tehnologije korištene u sigurnosti pri prijenosu osjetljivih podataka u komunikaciji između sustava. Ostatak poglavlja pruža uvod u kriptografiju.
+
+
+\section{SSL, TLS i Kriptografija}
+Svakim danom svijet postaje sve više povezan. Tijekom zadnjeg stoljeća popularnost Interneta eksponencijalno je narasla i time promijenila naše živote. Već sada je broj pametnih mobitela veći od broja ljudi. Također, sve više se umrežuju čitavi informatički sustavi, industrijska postrojenja i mnoge druge tehnologije. Navedene primjene i uređaji koji ih koriste imaju zajedničku poveznicu - oslanjaju se na protokolima zvanima SSL i TLS, kako bi zaštitili informacije u prijenosu.
+
+
+\subsection{Transport Layer Security}
+U fazama razvoja Interneta i procesa umrežavanja, fokus nije bio usmjeren na sigurnost. Rezultat toga je da su temeljni komunikacijski protokoli inheretno nesigurni i temelje se na međusobnom povjerenju svih uključenih stranki. Takav pristup je bio moguć u ranim fazama umrežavanja, ali danas je neostvariv i predstavlja problem.
+
+\medskip
+
+TSL i njegov prethondik SSL su kriptografski protokoli razvijeni u svrhu stvaranja sigurnosne komunikacije u nesigurnom okruženju (infrastrukturi). Pravilnom implementacijom SSL I TSL protokola moguće je stvoriti sigurni komunikacijski kanal s proizvoljnim servisima na Internetu ili nekoj drugoj mreži, biti siguran da je ostvarena komunikacija s odgovarajućim serverom i da će izmjena informacija biti ostvarena na siguran način. Ovi protokoli štite \textit{transportni sloj}, odakle TLS i dobiva ime.
+
+\medskip
+
+Sigurnost nije jedini cilj TLS protokola. Naime, ima četiri glavna cilja, poredana u listu po prioritetima:
+
+\begin{itemize}
+\item \textbf{Kriptografska sigurnost} - glavni problem je omogućiti sigurnu komunikacija između bilo kojih stranki koje žele ostvariti izmjenu informacija.
+
+\item \textbf{Interoperabilnost} (međusobno funkcioniranje) - nezavisni programeri trebaju moći razviti programe i biblioteke koje mogu međusobno komunicirati koristeće uobičajene kriptografske postupke.
+
+\item \textbf{Protežnost} - TLS efektivno predstavlja okvir za razvoj i implementaciju kriptografskih protokola. Važno je da su međusobno nezavisni o korištenim kriptografskim primitivima, pritom dozvoljavajući migraciju jednog primitiva drugom bez potrebe za stvaranjem novih protokola.
+
+\item \textbf{Efikasnost} - zadnji cilj predstavlja ostvarivanje svih gore navedenih ciljeva u prihvatljivom okvirima performansa, minimizirajući izdatke performansa kriptografskih operacija i pružajući plan predmemoriranja (cacheing) trenutne sesije. 
+\end{itemize}
+
+
+\subsection{Mrežni sloj}
+Internet je u svojoj osnovi temeljen na IP i TCP protokolima, koji se koriste za pakiranje  podataka u pakete za transport. Paketi prolaze kroz mnoge mreže i informatičke sustave (nazvane \textit{hops}) i budući da osnovni protokoli ne pružaju nikakvu sigurnost sami po sebi, svatko s pristupom komunikacijskom sloju može dobiti puni pristup informacijama i podacima u tranzitu, a tako i promijeniti čitavi promet bez ikakvog otkrivanja.
+
+\medskip
+
+IP i TCP nisu jedini ranjivi protokoli. Postoji čitavi opseg protokola korištenih za \textbf{routing} - omogućavanje računalima da pronađu tražene servise na mreži. Servisi kao DNS su jedni od njih, a veza namjenjena jednom računalu može biti odgovorena neočekivane stranke.
+
+\medskip 
+
+Kako bi se podaci i informacije osigurale, koriste se enkripcijski postupci. Napadač može pogledati enkriptirane podatke, ali ne može ih dekriptirati i modificirati po želji. U spriječavanju takvih napada, SSL i TSL se oslanjaju na PKI-u (eng, \textit{Public-key Infrastructure}), koji osigurava da se mrežni promet šalje odgovarajućem primatelju.
+
+U svrhu razumijevanja kako se SSL i TSL uklapaju, potrebno je razmotriti OSI (eng. \textit{Open Systems Interconnection})model. OSI oredstavlja konceptualni model korišten u opisivanju mrežne komnukacije. Ukratko, sva funkcionalnost je mapirana u sedam slojeva:
+
+\begin{table}[!ht]
+\caption{Slojevi OSI modela}
+\begin{tabularx}{\textwidth} {c c X c}
+\hline
+&\textbf{OSI sloj} & \textbf{Opis} & \textbf{Protokol primjer}\\
+\hline 
+7 & Applkacijski & Aplikacijski podaci & HTTP, SMTP, IMAP \\
+6 & Prezentacijski & Prikaz podataka, konverzija, ekripcija & SSL/TLS \\
+5 & Sesija & Upravljanje višestrukim konekcijama & - \\
+4 & Transportni & Pouzdano dostavljanje paketa & TCP, UDP \\
+3 & Mrežni & Usmjeravanje i dostavljanje datagrama između mrežnih node-ova & IP, IPSec\\
+2 & Podatkovni & Pouzdana lokalna podatkovna konekcija (LAN) & Ethernet \\
+1 & Fizički & Izravna fizička konekcija & CAT5\\
+\hline
+\end{tabularx}
+\end{table}
+
+Najniži sloj je najbliži fizičkoj komunikacijskoj vezi; naredni slojevi su grade nad prethodnim slojevima i pružaju višu razinu apstrakcije. Na samome vrhu se nalazi aplikacijski sloj, koji nosi aplikacijske podatke. Strukturiranje komunikacije na ovaj način pruža uredno razdvajanje implementacije; protokoli se ne moraju birnuti o funkcionalnosti implementiranoj u nižim slojevima. Nadalje, protokoli u različitim slojevima mogu biti dodani i maknuti; protokoli u nižim slojevima mogu biti korišteni za mnoge protokole u višim slojevima.
+
+\medskip
+
+SSL i TSL su odličan primjer kako taj princip funkcionira u stvarnosti. Nalaze se iznad TCP-a, ali ispod protokola više razine kao HTTP. Kada enkripcija podataka nije potrebna, TSL se može ukloniti iz modela, bez utjecaja na 
+
+
+\subsection{Kriptografija}
+Kriptografija ima mnogo definicija, ali u ovom radu kriptografiju opisuje znanost i umjetnost sigurne komunikacije. Kada se kriptografija pravilno primjeni, adresira tri temeljna zahtjeva sigurnosti:
+\begin{itemize}
+\item Čuvanje tajni (\textit{confidentiality})
+\item Verificiranje identiteta (\textit{authenticity})
+\item Osiguravanje sigurnog prijenosa podataka (\textit{integrity})
+\end{itemize}
+
+Kriptografija je veoma raznoliko područje i ima snažne temelje u matematici, ali u svrhu ovog rada, pregled kriptografije će se držati na visokoj razini s ciljem ostvarivanja osnovnih razumijevanja za daljnje shvaćanje rada.
+
+\subsection{Građenje blokova}
+Kritpografija na svojoj najnižoj razini se zasniva na korištenju raznih kriptografskih primitiva. Kriptografski primitivi su dobro uhodani low-level kriptografski algoritmi korišteni za građenje kriptografskih protokola gdje je svaki primitiv posebno dizajniran s određenom korisnom funkcionalnošću. Primjerice, možemo koristiti primitive za enkripciju i drugi primitiv za provjeru cjelovitosti. Primitivi posebno nisu veoma korisni, ali njihove kombinacije u sheme i protokole pružaju otporni sigurnosne sustave.
+
+\bigskip
+\medskip
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|}
+\hline
+\begin{center}\Large \centering Tko su Alice i Bob?\end{center} \\
+\textit{Alice} i \textit{Bob} su imena najčešće korištena u raspravama vezanim za kriptografiju. Koriste se kako bi inače suhoparnu temu učinili zanimljivijom. Zasluge za prvo korištenje tih imena pripadaju Ronu Rivestu, koji je u svom radu 1977 koristio ta imena za predstavljanje RSA kriptosistema. U ovome radu su predstavljeni i korišteni Finn, kao uljez s mogućnošću prisluškivanja komunikacije i Jake, kao uljez s mogućnošću posredovanja mrežnog prometa.\\
+\hline
+\end{tabularx}
+\end{center}
+
+\subsection{Simetrična enkripcija}
+\textit{Simetrična enkripcija} (eng. \textit{Symmetric encryption} ili \textit{Private-key cryptography}) je metoda enkripcije koja omogućuje sigurni prijenos upreko nesigurnog komunikacijskog kanala. Kako bi mogli sigurno komunicirati, Alice i Bob se prvo trebaju složiti oko enkripcijskog algoritma i \textit{tajnog ključa}. Kada Alice odluči poslati željene podatke Bobu, koristi tajni ključ kako bi enkriptirao podatke. Bob koristi isti ključ kako bi ih dekriptirao. Jake, uljez s pristupom komunikacijskom kanalu, može vidjeti podatke, ali ne može ih dekriptirati i vidjeti originalne podatke. Alice i bob mogu proizvoljno dugo nastaviti sigurnu komunikaciju, ako drže tajni ključ sigurnim.
+
+\medskip
+
+%%subst cipher wikipedia - slika
+Enkripcija podataka se provodi dugi niz godina, primjerice \textit{zamjenskim šifriranjem}  (eng. \textit{substitution cipher}). Prije pojašnjenja što je zamjensko šifriranje, potrebno je objasniti što je \textit{šifrirani tekst} (eng. \textit{ciphertext}) i \textit{dekripcija}(eng. \textit{decryption}). U kriptografiji, šifrirani tekst je rezultat enkripcije provedeno nad običnim textom, koristeći algoritam, često zvan šifra(eng. \textit{cipher}). Šifrirani tekst je također poznat kao enkriptirana infomracija iz razloga što sadrži oblik originalnog texta, koji je nečitljiv drugima bez odgovarajuće šifre. Dekripcija, inverzan postupak enkripcije, je proces prevođenja šifriranog teksta u čitljivi originalni tekst postupkom iverzne šifre.\newline
+Zamjensko šifriranje je metoda enkripcije u kojoj se \textit{jedinice} (eng. \textit{units}) čitljivog texta zamjenjuju nekom drugom jedinicom (primjerice slovo abecede drugim slovom abecede) i pritom čine šifrirani tekst. Primatelj šifriranog teksta dekriptira primljeni tekst inverznom ekripcijom.
+
+\medskip
+
+ Put a pikčr koji sam napraviš
+
+\medskip
+
+U iznad opisanoj metodi ne koristi se sigurnosni ključ, što predstavlja raniji pristup ekripciji. Danas je usvoj drugačiji pristup temeljen na opažanju kriptografa 19. stoljeća, \textit{Augustea Kerckhoffsa}:
+
+\textit{''A cryptosystem should be secure even if the attacker knows everything about the system, except the secret key''}.
+
+Kerckhoffovo načelo je usvojeno iz nekoliko razloga:
+\begin{itemize}
+\item Da bi enkripcisjki algoritam bio koristan, mora biti dijeljiv s drugima. Kako raste broj osoba s pristupom algoritmu, vjerojatnost da će agoritam postati nesiguran također raste.
+\item Pojedinačni algoritam bez sigurnosnog ključa je nepraktičan za korištenje u velikim grupama; svatko može dekriptirati tuđu komunikaciju.
+\item Veoma je mučan proces dizajnirati dobar enkripcijski algoritam. Sigurnost algoritma raste s njegovim ispitivanjem i izlaganjem različitim scenarijima. Preporuča se konzervativan pristup prilikom usvajanja novog algoritma. Obično se godinama pokušava razbiti algoritam kako bi se utvrdila sigurnost šifre.
+\end{itemize}
+
+Dobar enkripcijski algoritam je onaj koji izdaje naizgled nasumičan šifrirani tekst, pritom ne otkrivajući nikakve informacije originalnog teksta, što onemogućuje napadaču analizu.
+
+
+\newpage
+\section{PKI}
+
+
+\chapter{Protokoli}
+
+\chapter{Programska izvedba}
+
+\chapter{Simulacija i analiza eksperimentalnih rezultata}
 
 \chapter{Zaključak}
 Zaključak.
